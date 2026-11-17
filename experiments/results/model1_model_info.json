@@ -1,0 +1,36 @@
+[
+  {
+    "model": "qwen2.5:1.5b",
+    "family": "qwen2",
+    "parameters": "1.5B",
+    "quantization": "Q4_K_M",
+    "format": "gguf",
+    "layers": 28,
+    "hidden_size": 1536,
+    "attention_heads": 12,
+    "kv_heads": 2,
+    "context_length": 32768,
+    "vocab_size": null,
+    "disk_mb": 940.4,
+    "cold_load_s": 11.17,
+    "cold_first_call_s": 16.16,
+    "warm_rss_mb": 1142.6
+  },
+  {
+    "model": "llama3.2:3b",
+    "family": "llama",
+    "parameters": "3.2B",
+    "quantization": "Q4_K_M",
+    "format": "gguf",
+    "layers": 28,
+    "hidden_size": 3072,
+    "attention_heads": 24,
+    "kv_heads": 8,
+    "context_length": 131072,
+    "vocab_size": null,
+    "disk_mb": 1925.8,
+    "cold_load_s": 14.2,
+    "cold_first_call_s": 18.85,
+    "warm_rss_mb": 2442.7
+  }
+]

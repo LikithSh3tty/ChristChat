@@ -1,0 +1,4 @@
+collection,chunk_words,overlap,embed_model,files,chunks,avg_chunk_words,chunk_s,embed_s
+docs_w80_o20,80,20,sentence-transformers/all-MiniLM-L6-v2,christ_handbook_2026_27.pdf,552,74.4,0.74,84.97
+docs_w120_o30,120,30,sentence-transformers/all-MiniLM-L6-v2,christ_handbook_2026_27.pdf,372,107.8,0.64,29.89
+docs_w200_o40,200,40,sentence-transformers/all-MiniLM-L6-v2,christ_handbook_2026_27.pdf,228,162.4,0.91,23.16

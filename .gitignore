@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/vector_db/
+mlruns/
+mlflow.db
+logs/
+
+# university handbook is copyrighted; place it locally in data/documents/
+data/documents/*.pdf

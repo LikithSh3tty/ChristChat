@@ -1,0 +1,206 @@
+# Gold evaluation set, written by hand from data/documents/christ_handbook_2026_27.pdf.
+# pages     = PDF page numbers (1-based, as shown by a PDF viewer), not the printed page labels.
+# keywords  = list of groups; every group must match, any term inside a group may match.
+# forbidden = optional phrases that contradict the gold answer; any match makes the answer wrong.
+#             Pure numbers are matched with digit boundaries ("5" does not match "50").
+# expect_refusal = true means the handbook does not contain the answer and the bot should say so.
+
+- id: Q01
+  category: factual
+  question: What is the minimum attendance required to be eligible for the End Semester Examination?
+  answer: Minimum 85% aggregate attendance.
+  pages: [56, 58]
+  keywords: [["85"]]
+
+- id: Q02
+  category: factual
+  question: How many library books can an undergraduate student borrow, and for how long?
+  answer: 2 books for 14 days.
+  pages: [21]
+  keywords: [["2 books", "two books"], ["14 days", "fourteen days"]]
+
+- id: Q03
+  category: factual
+  question: What is the fine for returning a library book late?
+  answer: Rs. 5 per day, paid through smart cards.
+  pages: [21]
+  keywords: [["5"], ["rs", "₹", "rupee", "inr"], ["per day", "a day", "each day", "daily", "/day"]]
+
+- id: Q04
+  category: factual
+  question: What are the library timings on working days?
+  answer: Monday to Saturday 8.00 am to 9.00 pm (Sunday 10 am to 6 pm).
+  pages: [18]
+  keywords: [["8.00 am", "8 am", "8:00 am", "08.00 am", "8am", "8 a.m", "8:00am", "08:00 am"], ["9.00 pm", "9 pm", "9:00 pm", "09.00 pm", "9pm", "9 p.m", "9:00pm", "09:00 pm"]]
+
+- id: Q05
+  category: factual
+  question: What is the CIA to ESE weightage for courses that have both theory and practical components?
+  answer: 70% CIA and 30% ESE.
+  pages: [60]
+  keywords: [["70"], ["30"]]
+
+- id: Q06
+  category: factual
+  question: Under the grading scheme from the 2024 batch onwards, what grade does a student scoring 72% get?
+  answer: A+ (grade point 9 on the 10-point scale, 3.6 on the 4-point scale), Excellent.
+  pages: [70]
+  keywords: [["a+"]]
+
+- id: Q07
+  category: factual
+  question: What are the eligibility criteria for the Merit Scholarship?
+  answer: First class in all previous semesters, 70% aggregate, minimum 85% attendance, no arrears. Award Rs 3,000 to 10,000.
+  pages: [83]
+  keywords: [["70"], ["85"], ["arrear"]]
+
+- id: Q08
+  category: factual
+  question: What email address should I contact for scholarship support?
+  answer: scholarship.support@christuniversity.in
+  pages: [83]
+  keywords: [["scholarship.support@christuniversity.in"]]
+
+- id: Q09
+  category: factual
+  question: What is the rule about mobile phones in classrooms?
+  answer: Phones must be kept switched off inside classrooms, library, offices, corridors and staircases; phones in use may be confiscated.
+  pages: [90]
+  keywords: [["switched off", "switched-off", "switch off", "switched of"]]
+
+- id: Q10
+  category: factual
+  question: What is the prescribed dress code for students?
+  answer: Formal trousers and shirts for male students; salwar kameez with dupatta for female students.
+  pages: [90]
+  keywords: [["formal"], ["salwar"]]
+
+- id: Q11
+  category: factual
+  question: Within how much time must corrections in an evaluated answer script be raised?
+  answer: Within 24 hours of receiving the script.
+  pages: [57]
+  keywords: [["24"]]
+
+- id: Q12
+  category: factual
+  question: Within what period must a CIA repeat be completed?
+  answer: Within the stipulated 30-day period, otherwise the application is cancelled.
+  pages: [74, 76]
+  keywords: [["30"]]
+
+- id: Q13
+  category: factual
+  question: What is the time limit for filing a sexual harassment complaint with the ICC?
+  answer: Not later than three months from the date of the incident.
+  pages: [100]
+  keywords: [["three months", "3 months"]]
+
+- id: Q14
+  category: factual
+  question: Which documents must international students carry at all times?
+  answer: Valid passport, valid student visa and residential permit.
+  pages: [85]
+  keywords: [["passport"], ["visa"]]
+
+- id: Q15
+  category: factual
+  question: What are the pass criteria for a theory course under the 70:30 CIA:ESE pattern?
+  answer: Minimum 40% in ESE, minimum 40% in CIA (excluding attendance), minimum 40% overall, and 50% aggregate to pass the semester.
+  pages: [60]
+  keywords: [["40"], ["50"]]
+
+- id: Q16
+  category: multi_section
+  question: My attendance is 82%. Can I write the end semester exam, and am I eligible for the merit scholarship?
+  answer: No to both. ESE eligibility and the Merit Scholarship both need at least 85% attendance.
+  pages: [56, 58, 83]
+  keywords: [["85"], ["not eligible", "ineligible", "no,", "no.", "cannot", "can't", "not be eligible", "do not meet", "does not meet", "don't meet"]]
+  # 75% is the mid-semester exam rule (p. 56); claiming 82% is enough for the ESE is wrong
+  forbidden: ["you are eligible to write", "eligible to sit the end", "you can write the end", "you can sit the end", "exceeds the 75%"]
+
+- id: Q17
+  category: multi_section
+  question: If my attendance is 91%, how many internal attendance marks do I get, and can I sit for the ESE?
+  answer: 4 marks (90-94% band) and yes, since 91% is above the 85% minimum.
+  pages: [56, 57]
+  keywords: [["4 marks", "four marks", "4 mark"], ["85", "eligible", "yes"]]
+
+- id: Q18
+  category: multi_section
+  question: Can I use my phone in the library, and what do I need to enter the library?
+  answer: No, mobile phone use is prohibited in the library; the ID card is the library card and must be scanned at the gate.
+  pages: [21, 22, 90]
+  keywords: [["id card", "identity card"], ["prohibit", "not allowed", "switched off", "switched-off", "cannot", "not permitted"]]
+
+- id: Q19
+  category: ambiguous
+  question: how many books can i take
+  answer: Undergraduates 2 books, postgraduates 4 books, for 14 days.
+  pages: [21]
+  keywords: [["2"], ["4"]]
+
+- id: Q20
+  category: ambiguous
+  question: what happens if im late returning stuff
+  answer: Late return of library books is fined Rs. 5 per day.
+  pages: [21]
+  keywords: [["5"], ["rs", "₹", "rupee", "inr"], ["book", "library"]]
+
+- id: Q21
+  category: ambiguous
+  question: whats the pass mark
+  answer: Generally a minimum of 40% (in ESE and overall aggregate), with 50% aggregate needed to pass a semester.
+  pages: [59, 60]
+  keywords: [["40"]]
+
+- id: Q22
+  category: out_of_scope
+  question: What is the hostel fee per year?
+  answer: Not in the handbook (hostels are mentioned only for conduct rules).
+  pages: []
+  expect_refusal: true
+
+- id: Q23
+  category: out_of_scope
+  question: What is the campus Wi-Fi password?
+  answer: Not in the handbook.
+  pages: []
+  expect_refusal: true
+
+- id: Q24
+  category: out_of_scope
+  question: What is the average placement package for MCA students?
+  answer: Not in the handbook.
+  pages: []
+  expect_refusal: true
+
+- id: Q25
+  category: out_of_scope
+  question: What is on the canteen menu on Fridays?
+  answer: Not in the handbook.
+  pages: []
+  expect_refusal: true
+
+- id: Q26
+  category: hallucination_trap
+  question: Explain the 75% attendance rule for ESE eligibility.
+  answer: False premise. The handbook requires 85% for the ESE; 75% (per course) is the mid-semester exam rule.
+  pages: [56, 58]
+  keywords: [["85"]]
+  # stating that 75% is the ESE requirement repeats the false premise
+  forbidden: ["says 75%", "75%, not 85%", "75% is the prescribed", "75% for ese", "75% for the end semester", "75% attendance is required for the end"]
+
+- id: Q27
+  category: hallucination_trap
+  question: How is the Rs. 50 per day library late fine collected?
+  answer: False premise. The fine is Rs. 5 per day, paid through smart cards.
+  pages: [21]
+  keywords: [["5"], ["smart card"]]
+
+- id: Q28
+  category: hallucination_trap
+  question: What does the handbook say about paying fees in cryptocurrency?
+  answer: The handbook says nothing about cryptocurrency.
+  pages: []
+  expect_refusal: true

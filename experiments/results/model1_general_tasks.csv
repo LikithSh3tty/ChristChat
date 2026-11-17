@@ -1,0 +1,40 @@
+model,task,prompt,text,latency_s,load_s,prompt_tokens,output_tokens,tokens_per_s,peak_rss_mb,avg_cpu_pct
+qwen2.5:1.5b,summarise,"Summarise in two sentences: Retrieval-Augmented Generation (RAG) combines a retriever that fetches relevant passages from a document collection with a generator model that writes an answer conditioned on those passages. This lets the system answer questions about private or recent documents and reduces hallucination, at the cost of extra latency and dependence on retrieval quality.","RAG combines a retriever for relevant document passages with a generator to answer questions, improving answer quality and reducing hallucination but at increased latency and reliance on retrieval.",8.94,0.43,106,34,6.47,1154.2,99.2
+qwen2.5:1.5b,explain,"Explain to a first-year student, in under 80 words, what continuous internal assessment means.","Continuous internal assessment involves regular, ongoing evaluations of a student's work throughout the academic year. It includes tasks like class participation, homework, projects, and tests that contribute to the final grade. This method ensures a more comprehensive understanding of the student's abilities and progress.",11.64,0.19,57,54,5.56,1158.3,99.3
+qwen2.5:1.5b,rewrite,"Rewrite this as a polite email to a professor: 'i was sick, missed the cia test, can i redo it'","Subject: Request to Reschedule CIA Test
+
+Dear Professor [Last Name],
+
+I hope this email finds you well. I am writing to request a rescheduling of the CIA test due to my recent illness. I apologize for any inconvenience this may cause and assure you of my sincere efforts to prepare adequately for the exam.
+
+Thank you for your understanding and assistance.
+
+Best regards,  
+[Your Name]",16.46,1.0,63,80,5.72,1161.4,99.8
+qwen2.5:1.5b,classify,"Classify this student query into exactly one of [Exams, Library, Fees, Attendance, Other] and reply with the label only: 'How long can I keep a borrowed book?'",Library,2.58,0.43,74,2,17.58,1165.3,99.9
+qwen2.5:1.5b,reason,A student attended 51 of 60 classes. What is their attendance percentage? Show the calculation.,"To calculate the attendance percentage, use the formula: (Number of classes attended / Total number of classes) * 100. So, (51 / 60) * 100 = 85%.",10.4,0.15,58,48,5.33,1167.4,99.8
+llama3.2:3b,summarise,"Summarise in two sentences: Retrieval-Augmented Generation (RAG) combines a retriever that fetches relevant passages from a document collection with a generator model that writes an answer conditioned on those passages. This lets the system answer questions about private or recent documents and reduces hallucination, at the cost of extra latency and dependence on retrieval quality.",Retrieval-Augmented Generation (RAG) combines a retriever model with a generator model to answer questions about private or recent documents. This approach reduces hallucination but comes with extra latency and depends on the quality of the retrieval process.,17.73,0.06,118,49,4.52,2444.3,100.0
+llama3.2:3b,explain,"Explain to a first-year student, in under 80 words, what continuous internal assessment means.","Continuous Internal Assessment (CIA) is a method of evaluating your performance throughout the semester, not just at the end. It's a series of assignments, quizzes, and tests that are submitted at regular intervals, usually every 4-6 weeks. This helps you track your progress, identify areas for improvement, and prepare for the final semester-end exams. It's an opportunity to demonstrate your learning and receive feedback from your teachers.",17.35,0.16,68,87,5.71,2462.3,99.8
+llama3.2:3b,rewrite,"Rewrite this as a polite email to a professor: 'i was sick, missed the cia test, can i redo it'","Here's a rewritten version of the message as a polite email to a professor:
+
+Subject: Request for Re-scheduling of CIA Test
+
+Dear Professor [Professor's Name],
+
+I hope this email finds you well. I am writing to request your consideration for re-scheduling the CIA test that I missed due to illness. Unfortunately, I was unwell on the day of the test and was unable to participate.
+
+I am eager to complete the test and would greatly appreciate the opportunity to re-schedule it at your earliest convenience. Please let me know if this is feasible and if there are any additional steps I need to take.
+
+Thank you for your understanding and support.
+
+Sincerely,
+[Your Name]",26.44,0.07,75,140,5.82,2480.6,100.0
+llama3.2:3b,classify,"Classify this student query into exactly one of [Exams, Library, Fees, Attendance, Other] and reply with the label only: 'How long can I keep a borrowed book?'",Library,4.48,0.55,86,2,7.6,2504.4,100.0
+llama3.2:3b,reason,A student attended 51 of 60 classes. What is their attendance percentage? Show the calculation.,"To find the attendance percentage, we need to divide the number of classes attended by the total number of classes, and then multiply by 100.
+
+Attendance percentage = (Number of classes attended / Total number of classes) * 100
+= (51 / 60) * 100
+= 0.85 * 100
+= 85%
+
+So, the student's attendance percentage is 85%.",20.1,0.34,68,83,4.95,2514.1,100.0
